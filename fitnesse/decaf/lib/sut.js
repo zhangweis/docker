@@ -114,6 +114,7 @@
         return constructor.apply(this, args);
       };
       F.prototype = constructor.prototype;
+	if (!constructor.name) return new F();
 	var types=[constructor];
 
       var instance= new types[0]();

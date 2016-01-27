@@ -117,7 +117,7 @@
 	if (!constructor.name) return new F();
 	var types=[constructor];
 
-      var instance= new types[0]();
+      var instance= new types[0](...args);
 	return instance;
     };
 

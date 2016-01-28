@@ -27,7 +27,7 @@
           e = _error;
         }
       }
-      throw 'Cannot find ' + module + ' because of '+e;
+      throw 'Cannot find ' + module + ' because of '+e+e.stack;
     };
 
     return FixtureLoader;

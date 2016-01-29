@@ -10,8 +10,8 @@ ENV PATH $JAVA_HOME/bin:$PATH
 RUN apt-get update; \
   apt-get install -y git curl; \
   curl -sL https://deb.nodesource.com/setup_5.x | sudo bash -; \
-  apt-get update && apt-get install -y nodejs; \
-  wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u51-b16/$filename -O /tmp/$filename --progress=bar:force; \
+  apt-get update && apt-get install -y nodejs
+RUN wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u51-b16/$filename -O /tmp/$filename --progress=bar:force; \
   mkdir -p /opt/java-oracle && tar -zxf /tmp/$filename -C /opt/java-oracle/;  \
   update-alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 20000; \
   update-alternatives --install /usr/bin/javac javac $JAVA_HOME/bin/javac 20000; \
